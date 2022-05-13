@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -63,7 +64,17 @@ class _HomeScreenState extends State<HomeScreen> {
               margin: EdgeInsets.only(top: 28.8, left: 14.4),
               child: DefaultTabController(
                 length: 4,
-                child: TabBar(labelPadding: EdgeInsets.symmetric(horizontal: 14.4),tabs: [
+                child: TabBar(
+                  labelPadding: EdgeInsets.symmetric(horizontal: 14.4),
+                  indicatorPadding: EdgeInsets.symmetric(horizontal: 14.4),
+                  isScrollable: true,
+                  labelColor: Color(0xFF0000000),
+                  unselectedLabelColor: Color(0xFF8a8a8a),
+
+                  labelStyle: GoogleFonts.lato(fontSize: 14, fontWeight: FontWeight.w700),
+                  unselectedLabelStyle: GoogleFonts.lato(fontSize: 14, fontWeight: FontWeight.w700),
+                  
+                  tabs: [
                   Tab(
                     child: Container(child: Text('Recommend'))),
                   Tab(

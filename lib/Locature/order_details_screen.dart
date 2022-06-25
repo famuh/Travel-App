@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/Locature/component.dart';
 
 class orderDetailsScreen extends StatefulWidget {
   orderDetailsScreen({Key? key}) : super(key: key);
@@ -25,10 +26,7 @@ class _orderDetailsScreenState extends State<orderDetailsScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               //jumlah item
-              Text(
-                'Items : 3',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-              ),
+              titleString(titleText: 'Items : 3'),
 
               //item
               Container(
@@ -78,7 +76,6 @@ class _orderDetailsScreenState extends State<orderDetailsScreen> {
                     //section 2
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                     
                       children: [
                         //merk dagang
                         Row(children: [
@@ -95,13 +92,17 @@ class _orderDetailsScreenState extends State<orderDetailsScreen> {
                             ),
                           )
                         ]),
-                        SizedBox(height: 3,),
+                        SizedBox(
+                          height: 3,
+                        ),
 
                         //nama barang
                         Text('Modern Chair',
                             style: TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.w600)),
-                        SizedBox(height: 3,),
+                        SizedBox(
+                          height: 3,
+                        ),
 
                         //keterangan barang
                         Text(
@@ -110,14 +111,31 @@ class _orderDetailsScreenState extends State<orderDetailsScreen> {
                         )
                       ],
                     ),
-Spacer(),
+                    Spacer(),
                     //harga
-                    Text('Rp 690.000',
-                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),)
+                    Text(
+                      'Rp 690.000',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                    )
                   ],
                 ),
+              ),
+              Divider(),
+
+              //Shopping Address
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      titleString(titleText: 'Shopping Address'),
+                      TextButton(onPressed: () {}, child: Text('Change'))
+                    ],
+                  ),
+                  Row()
+                ],
               )
-            ,Divider()
             ],
           ),
         ));

@@ -23,8 +23,8 @@ class dataString extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(tittleData, style: TextStyle(fontSize: 12, color: Colors.grey)),
-          Text(textData, style: TextStyle(fontSize: 12, color: Colors.grey))
+          Text(tittleData, style: TextStyle(fontSize: 14, color: Colors.grey)),
+          Text(textData, style: TextStyle(fontSize: 14, color: Colors.grey))
         ],
       ),
     );

@@ -29,7 +29,6 @@ class _orderDetailsScreenState extends State<orderDetailsScreen> {
             children: [
               //jumlah item
               titleString(titleText: 'Items : 3'),
-
               //item
               Container(
                 margin: EdgeInsets.symmetric(vertical: 10),
@@ -186,9 +185,51 @@ class _orderDetailsScreenState extends State<orderDetailsScreen> {
                   dataString(tittleData: 'Delivery', textData: 'Rp 50.000'),
                   dataString(tittleData: 'Total', textData: 'Rp 470.000'),
                 ],
-              )
+              ),
+              Divider(),
+
+              //Voucher
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  titleString(titleText: 'Voucher'),
+                  TextButton(onPressed: (){}, child: orangeText(tittleText: 'Use Voucher >'))
+                ],
+              ),
+              Divider(),
+            
+              //bottom
+              Spacer(),
+              Container(
+                padding: EdgeInsets.zero,
+                width: MediaQuery.of(context).size.width,
+                height: 80,
+                decoration: BoxDecoration(
+                  color: Colors.transparent,
+                  border: Border.all(color: Colors.black),
+                  borderRadius: BorderRadius.circular(20)
+                ),
+                child: Center(
+                  child: ListTile(
+                    title: Text('Total Payment'),
+                    subtitle: Text('Rp 740.000'),
+                    trailing: ElevatedButton(
+                      onPressed: (){},
+                      child: Text('Place Order'),
+                      style: ElevatedButton.styleFrom(
+                        primary: Color.fromRGBO(212, 85, 0, 1),
+                        padding: EdgeInsets.all(20)
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              
+              
             ],
           ),
-        ));
+        ),
+       
+        );
   }
 }

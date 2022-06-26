@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application/Locature/component.dart';
 
@@ -72,7 +74,7 @@ class _orderDetailsScreenState extends State<orderDetailsScreen> {
                             ))
                       ],
                     ),
-                    SizedBox(width: 10),
+                    SizedBox(width: 20),
                     //section 2
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -130,10 +132,28 @@ class _orderDetailsScreenState extends State<orderDetailsScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       titleString(titleText: 'Shopping Address'),
-                      TextButton(onPressed: () {}, child: Text('Change'))
+                      TextButton(onPressed: () {}, child: orangeText(tittleText: 'Change'))
                     ],
                   ),
-                  Row()
+                  Column(
+                    children: [
+                      dataString(tittleData: 'Name', textData: 'Cleopatra S.'),
+                      dataString(tittleData: 'Street', textData: 'Asia 77'),
+                      dataString(tittleData: 'Phone', textData: '(+62)821 6940 7777'),
+                    ],
+                  )
+                ],
+              ),
+              Divider(),
+
+              //Payment
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [titleString(titleText: 'Payment'), TextButton(onPressed: (){}, child: orangeText(tittleText: 'Change'))],),
+Row(children: [Icon(Icons.money, color: Colors.green,),
+Text('Cash', style: TextStyle(color: Colors.grey),)],)
                 ],
               )
             ],

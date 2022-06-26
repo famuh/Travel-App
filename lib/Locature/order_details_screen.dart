@@ -132,14 +132,17 @@ class _orderDetailsScreenState extends State<orderDetailsScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       titleString(titleText: 'Shopping Address'),
-                      TextButton(onPressed: () {}, child: orangeText(tittleText: 'Change'))
+                      TextButton(
+                          onPressed: () {},
+                          child: orangeText(tittleText: 'Change'))
                     ],
                   ),
                   Column(
                     children: [
                       dataString(tittleData: 'Name', textData: 'Cleopatra S.'),
                       dataString(tittleData: 'Street', textData: 'Asia 77'),
-                      dataString(tittleData: 'Phone', textData: '(+62)821 6940 7777'),
+                      dataString(
+                          tittleData: 'Phone', textData: '(+62)821 6940 7777'),
                     ],
                   )
                 ],
@@ -151,9 +154,37 @@ class _orderDetailsScreenState extends State<orderDetailsScreen> {
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [titleString(titleText: 'Payment'), TextButton(onPressed: (){}, child: orangeText(tittleText: 'Change'))],),
-Row(children: [Icon(Icons.money, color: Colors.green,),
-Text('Cash', style: TextStyle(color: Colors.grey),)],)
+                    children: [
+                      titleString(titleText: 'Payment'),
+                      TextButton(
+                          onPressed: () {},
+                          child: orangeText(tittleText: 'Change'))
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.money,
+                        color: Colors.green,
+                      ),
+                      Text(
+                        'Cash',
+                        style: TextStyle(color: Colors.grey),
+                      )
+                    ],
+                  )
+                ],
+              ),
+              Divider(),
+
+              //Order Summary
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  titleString(titleText: 'Order Summary'),
+                  dataString(tittleData: 'Subtotal', textData: 'Rp 690.000'),
+                  dataString(tittleData: 'Delivery', textData: 'Rp 50.000'),
+                  dataString(tittleData: 'Total', textData: 'Rp 470.000'),
                 ],
               )
             ],

@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application/Locature/component.dart';
 
@@ -15,6 +13,7 @@ class _orderDetailsScreenState extends State<orderDetailsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          elevation: 0,
           title: Text(
             'Order Details',
             style: TextStyle(color: Colors.black),
@@ -224,7 +223,6 @@ class _orderDetailsScreenState extends State<orderDetailsScreen> {
                   ),
                 ),
               ),
-              
               
             ],
           ),

@@ -65,26 +65,33 @@ class _HomeScreenState extends State<HomeScreen> {
               child: DefaultTabController(
                 length: 4,
                 child: TabBar(
-                  labelPadding: EdgeInsets.symmetric(horizontal: 14.4),
-                  indicatorPadding: EdgeInsets.symmetric(horizontal: 14.4),
-                  isScrollable: true,
-                  labelColor: Color(0xFF0000000),
-                  unselectedLabelColor: Color(0xFF8a8a8a),
-
-                  labelStyle: GoogleFonts.lato(fontSize: 14, fontWeight: FontWeight.w700),
-                  unselectedLabelStyle: GoogleFonts.lato(fontSize: 14, fontWeight: FontWeight.w700),
-                  
-                  tabs: [
-                  Tab(
-                    child: Container(child: Text('Recommend'))),
-                  Tab(
-                    child: Container(child: Text('Popular'))),
-                  Tab(
-                    child: Container(child: Text('New Destination'))),
-                  Tab(
-                    child: Container(child: Text('Hidden Gems'))),
-                ]),
+                    labelPadding: EdgeInsets.symmetric(horizontal: 14.4),
+                    indicatorPadding: EdgeInsets.symmetric(horizontal: 14.4),
+                    isScrollable: true,
+                    labelColor: Color(0xFF0000000),
+                    unselectedLabelColor: Color(0xFF8a8a8a),
+                    labelStyle: GoogleFonts.lato(
+                        fontSize: 14, fontWeight: FontWeight.w700),
+                    unselectedLabelStyle: GoogleFonts.lato(
+                        fontSize: 14, fontWeight: FontWeight.w700),
+                    tabs: [
+                      Tab(child: Container(child: Text('Recommend'))),
+                      Tab(child: Container(child: Text('Popular'))),
+                      Tab(child: Container(child: Text('New Destination'))),
+                      Tab(child: Container(child: Text('Hidden Gems'))),
+                    ]),
               ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 10),
+              padding: EdgeInsets.all(20),
+              height: 250,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  image: DecorationImage(
+                    
+                      image: NetworkImage(
+                          'https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80'))),
             )
           ],
         ),

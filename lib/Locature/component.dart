@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class titleString extends StatelessWidget {
   String titleText;
@@ -49,8 +50,14 @@ class orangeText extends StatelessWidget {
 //icon button atas
 class iconButtonNotifications extends StatelessWidget {
   String buttonTitle;
-  iconButtonNotifications({Key? key, required this.buttonTitle})
-      : super(key: key);
+  IconData icon;
+  Color bgColor;
+  iconButtonNotifications({
+    Key? key,
+    required this.buttonTitle,
+    required this.icon,
+    required this.bgColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -62,16 +69,69 @@ class iconButtonNotifications extends StatelessWidget {
         child: Column(
           children: [
             CircleAvatar(
-              radius: 30,
-              backgroundImage: NetworkImage('https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80')
-              // backgroundImage: AssetImage('assets/promo.png'),
+              radius: 25,
+              backgroundColor: bgColor,
+              child: FaIcon(
+                icon,
+                color: Colors.white,
+                size: 24,
+              ),
             ),
-            SizedBox(height: 3,),
+            SizedBox(
+              height: 3,
+            ),
             Text(
               buttonTitle,
               style: TextStyle(fontWeight: FontWeight.w600),
             )
           ],
+        ),
+      ),
+    );
+  }
+}
+
+//notifications data
+class notificationsCase extends StatelessWidget {
+  String caseTitle;
+  String? time;
+  String? orderID;
+  String? caseContent;
+  //icon
+  Color bgColor;
+  IconData icon;
+
+  notificationsCase(
+      {Key? key,required this.bgColor,required this.icon, this.orderID, required this.caseTitle, this.time, this.caseContent})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      margin: EdgeInsets.symmetric(vertical: 5),
+      padding: EdgeInsets.only(bottom: 10),
+      decoration: BoxDecoration(
+          border: Border.all(color: bgColor),
+          borderRadius: BorderRadius.circular(30)),
+      child: Center(
+        child: ListTile(
+          leading: CircleAvatar(
+            backgroundColor: bgColor,
+            child: FaIcon(
+              icon,
+              color: Colors.white,
+              size: 14,
+            ),
+          ),
+          title: ListTile(
+            contentPadding: EdgeInsets.zero,
+            title: Text(caseTitle),
+            subtitle: Text(time!),
+          ),
+          subtitle: Text(
+            caseContent!
+              ),
         ),
       ),
     );

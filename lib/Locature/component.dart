@@ -97,6 +97,7 @@ class notificationsCase extends StatelessWidget {
   String? time;
   String? orderID;
   String? caseContent;
+
   //icon
   Color bgColor;
   IconData icon;
@@ -126,7 +127,7 @@ class notificationsCase extends StatelessWidget {
           ),
           title: ListTile(
             contentPadding: EdgeInsets.zero,
-            title: Text(caseTitle),
+            title: Text(caseTitle, style: TextStyle(fontWeight: FontWeight.w600),),
             subtitle: Text(time!),
           ),
           subtitle: Text(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/Locature/get_started_screen.dart';
 import 'package:flutter_application/Locature/notifications_screen.dart';
 import 'package:flutter_application/Locature/order_details_screen.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: notificationsScreen(),
+      home: getStartedScreen(),
     );
   }
 }

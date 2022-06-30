@@ -103,7 +103,13 @@ class notificationsCase extends StatelessWidget {
   IconData icon;
 
   notificationsCase(
-      {Key? key,required this.bgColor,required this.icon, this.orderID, required this.caseTitle, this.time, this.caseContent})
+      {Key? key,
+      required this.bgColor,
+      required this.icon,
+      this.orderID,
+      required this.caseTitle,
+      this.time,
+      this.caseContent})
       : super(key: key);
 
   @override
@@ -127,16 +133,59 @@ class notificationsCase extends StatelessWidget {
           ),
           title: ListTile(
             contentPadding: EdgeInsets.zero,
-            title: Text(caseTitle, style: TextStyle(fontWeight: FontWeight.w600),),
+            title: Text(
+              caseTitle,
+              style: TextStyle(fontWeight: FontWeight.w600),
+            ),
             subtitle: Text(time!),
           ),
-          subtitle: Text(
-            caseContent!
-              ),
+          subtitle: Text(caseContent!),
         ),
       ),
     );
   }
 }
 
-//get started
+//register
+class registerTextField extends StatelessWidget {
+  IconData icon;
+  String hintTitle;
+
+  registerTextField({Key? key, required this.icon, required this.hintTitle})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          FaIcon(icon),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 10),
+            width: MediaQuery.of(context).size.width / 2,
+            height: 35,
+            child: TextFormField(
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                hintText: '  $hintTitle',
+                fillColor: Colors.grey[200],
+                filled: true,
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.transparent),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.transparent),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+

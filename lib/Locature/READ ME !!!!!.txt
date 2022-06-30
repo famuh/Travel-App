@@ -1,0 +1,2 @@
+vid, folder register itu isinya icon". Letakkan di dalam folder assets ye :D.
+bagian component ada update" juga :D

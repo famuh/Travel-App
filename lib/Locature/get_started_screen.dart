@@ -28,6 +28,7 @@ class _getStartedScreenState extends State<getStartedScreen> {
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height/2,
               color: Colors.white,
+              child: Text('data'),
             ),
           ],
         ),

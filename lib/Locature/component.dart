@@ -196,6 +196,31 @@ class titleInteriorDesign extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(title, style: TextStyle(fontWeight: FontWeight.w800,fontSize: 22));
+    return Text(title,
+        style: TextStyle(fontWeight: FontWeight.w800, fontSize: 22));
+  }
+}
+
+//interior design item
+class interiorDesignItem extends StatelessWidget {
+  String pathImage;
+  interiorDesignItem({Key? key, required this.pathImage}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        print('item $pathImage Clicked');
+      },
+      child: Container(
+          width: 80,
+          height: 80,
+          margin: EdgeInsets.symmetric(horizontal: 10),
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.blue,
+              image: DecorationImage(
+                  image: AssetImage(pathImage), fit: BoxFit.fill))),
+    );
   }
 }

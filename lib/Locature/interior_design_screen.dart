@@ -19,14 +19,16 @@ class InteriorDesignScreenState extends State<InteriorDesignScreen> {
                 color: Colors.white, borderRadius: BorderRadius.circular(10)),
             child: IconButton(
               icon: Icon(Icons.arrow_back, color: Colors.black),
-              onPressed: () => Navigator.of(context).pop(),
+              onPressed: () {
+                print('Back button Clicked');
+                Navigator.of(context).pop();
+              },
             ),
           ),
           backgroundColor: Colors.transparent,
           elevation: 0),
       extendBodyBehindAppBar: true,
-      body:
-       Container(
+      body: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           color: Colors.black,
@@ -55,92 +57,94 @@ class InteriorDesignScreenState extends State<InteriorDesignScreen> {
                                 topLeft: Radius.circular(50),
                                 topRight: Radius.circular(50))),
                         width: MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height / 2.5,
+                        height: MediaQuery.of(context).size.height / 2.3,
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 30),
-                          child: SafeArea(
-                            child: SingleChildScrollView(
-                            scrollDirection: Axis.vertical,
-                            child:  Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              //owner
-                              Text('From @livingroom',
-                                  style: TextStyle(color: Colors.black54)),
+                            padding: const EdgeInsets.symmetric(horizontal: 30),
+                            child: SafeArea(
+                              child: SingleChildScrollView(
+                                scrollDirection: Axis.vertical,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    //owner
+                                    Text('From @livingroom',
+                                        style:
+                                            TextStyle(color: Colors.black54)),
 
-                              //title interior design
-                              titleInteriorDesign(
-                                  title: 'Minimalist Livingroom'),
+                                    //title interior design
+                                    titleInteriorDesign(
+                                        title: 'Minimalist Livingroom'),
 
-                              //description
-                              Container(
-                                margin: EdgeInsets.only(top: 20),
-                                padding: EdgeInsets.symmetric(),
-                                height: 100,
-                                child: Text(
-                                    'The function of the formal living room is to receive the arrival of colleagues and co-workers who come to visit. Good for discussing office problems or personal and family problems. The arrangement of a formal living room is usually in a circular or opposite style.',
-                                    style: TextStyle(color: Colors.black54)),
+                                    //description
+                                    Container(
+                                      margin: EdgeInsets.only(top: 10),
+                                      height: 100,
+                                      child: Text(
+                                          'The function of the formal living room is to receive the arrival of colleagues and co-workers who come to visit. Good for discussing office problems or personal and family problems. The arrangement of a formal living room is usually in a circular or opposite style.',
+                                          style:
+                                              TextStyle(color: Colors.black54)),
+                                    ),
+
+                                    //interior
+                                    titleInteriorDesign(title: 'Interior'),
+                                    SafeArea(
+                                      top: false,
+                                      child: SingleChildScrollView(
+                                        scrollDirection: Axis.horizontal,
+                                        child: Row(
+                                          children: [
+                                            interiorDesignItem(
+                                                pathImage:
+                                                    'images/interior/interior_item/interior_1.png'),
+                                            interiorDesignItem(
+                                                pathImage:
+                                                    'images/interior/interior_item/interior_2.png'),
+                                            interiorDesignItem(
+                                                pathImage:
+                                                    'images/interior/interior_item/interior_3.png'),
+                                            interiorDesignItem(
+                                                pathImage:
+                                                    'images/interior/interior_item/interior_4.png'),
+                                            interiorDesignItem(
+                                                pathImage:
+                                                    'images/interior/interior_item/interior_5.png'),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+
+                                    Divider(color: Colors.transparent),
+                                    //more
+                                    titleInteriorDesign(title: 'More'),
+                                    SafeArea(
+                                      top: false,
+                                      child: SingleChildScrollView(
+                                        scrollDirection: Axis.horizontal,
+                                        child: Row(
+                                          children: [
+                                            interiorDesignItem(
+                                                pathImage:
+                                                    'images/interior/more/more_1.png'),
+                                            interiorDesignItem(
+                                                pathImage:
+                                                    'images/interior/more/more_2.png'),
+                                            interiorDesignItem(
+                                                pathImage:
+                                                    'images/interior/more/more_3.png'),
+                                            interiorDesignItem(
+                                                pathImage:
+                                                    'images/interior/more/more_4.png'),
+                                            interiorDesignItem(
+                                                pathImage:
+                                                    'images/interior/more/more_5.jpg'),
+                                          ],
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
-
-                              //interior
-                              titleInteriorDesign(title: 'Interior'),
-                              SafeArea(
-                                top: false,
-                                      child: 
-                                      SingleChildScrollView(
-                                        scrollDirection: Axis.horizontal,
-                                        child: Row(
-                                          children: [
-                                            Container(width: 80,height: 80, color: Colors.blue,margin: EdgeInsets.symmetric(horizontal: 10),),
-                                            Container(width: 80,height: 80, color: Colors.blue,margin: EdgeInsets.symmetric(horizontal: 10),),
-                                            Container(width: 80,height: 80, color: Colors.blue,margin: EdgeInsets.symmetric(horizontal: 10),),
-                                            Container(width: 80,height: 80, color: Colors.blue,margin: EdgeInsets.symmetric(horizontal: 10),),
-                                            Container(width: 80,height: 80, color: Colors.blue,margin: EdgeInsets.symmetric(horizontal: 10),),
-                                            Container(width: 80,height: 80, color: Colors.blue,margin: EdgeInsets.symmetric(horizontal: 10),),
-                                            Container(width: 80,height: 80, color: Colors.blue,margin: EdgeInsets.symmetric(horizontal: 10),),
-                                            Container(width: 80,height: 80, color: Colors.blue,margin: EdgeInsets.symmetric(horizontal: 10),),
-                                            Container(width: 80,height: 80, color: Colors.blue,margin: EdgeInsets.symmetric(horizontal: 10),),
-                                            Container(width: 80,height: 80, color: Colors.blue,margin: EdgeInsets.symmetric(horizontal: 10),),
-                                            Container(width: 80,height: 80, color: Colors.blue,margin: EdgeInsets.symmetric(horizontal: 10),),
-                         
-                                            
-                                          ],
-                                        ),
-                                      ),
-                                    )
-                              ,
-                              //more
-                              titleInteriorDesign(title: 'More'),
-                              SafeArea(
-                                top: false,
-                                      child: 
-                                      SingleChildScrollView(
-                                        scrollDirection: Axis.horizontal,
-                                        child: Row(
-                                          children: [
-                                            Container(width: 80,height: 80, color: Colors.blue,margin: EdgeInsets.symmetric(horizontal: 10),),
-                                            Container(width: 80,height: 80, color: Colors.blue,margin: EdgeInsets.symmetric(horizontal: 10),),
-                                            Container(width: 80,height: 80, color: Colors.blue,margin: EdgeInsets.symmetric(horizontal: 10),),
-                                            Container(width: 80,height: 80, color: Colors.blue,margin: EdgeInsets.symmetric(horizontal: 10),),
-                                            Container(width: 80,height: 80, color: Colors.blue,margin: EdgeInsets.symmetric(horizontal: 10),),
-                                            Container(width: 80,height: 80, color: Colors.blue,margin: EdgeInsets.symmetric(horizontal: 10),),
-                                            Container(width: 80,height: 80, color: Colors.blue,margin: EdgeInsets.symmetric(horizontal: 10),),
-                                            Container(width: 80,height: 80, color: Colors.blue,margin: EdgeInsets.symmetric(horizontal: 10),),
-                                            Container(width: 80,height: 80, color: Colors.blue,margin: EdgeInsets.symmetric(horizontal: 10),),
-                                            Container(width: 80,height: 80, color: Colors.blue,margin: EdgeInsets.symmetric(horizontal: 10),),
-                                            Container(width: 80,height: 80, color: Colors.blue,margin: EdgeInsets.symmetric(horizontal: 10),),
-                         
-                                            
-                                          ],
-                                        ),
-                                      ),
-                                    )
-                              
-                            ],
-                          ),
-                       
-                          ),)
-                          ),
+                            )),
                       ),
                     ],
                   )),
@@ -148,7 +152,7 @@ class InteriorDesignScreenState extends State<InteriorDesignScreen> {
               //button
               Positioned(
                 right: MediaQuery.of(context).size.width / 10,
-                bottom: MediaQuery.of(context).size.height / 2.7,
+                bottom: MediaQuery.of(context).size.height / 2.45,
                 child: Container(
                   width: 100,
                   height: 45,
@@ -160,7 +164,9 @@ class InteriorDesignScreenState extends State<InteriorDesignScreen> {
                           shape: RoundedRectangleBorder(
                               //to set border radius to button
                               borderRadius: BorderRadius.circular(30))),
-                      onPressed: () {},
+                      onPressed: () {
+                        print('Follow Clicked');
+                      },
                       child: const Text(
                         'Follow',
                         style: TextStyle(fontWeight: FontWeight.w600),

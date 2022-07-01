@@ -189,3 +189,13 @@ class registerTextField extends StatelessWidget {
   }
 }
 
+//interior design
+class titleInteriorDesign extends StatelessWidget {
+  String title;
+  titleInteriorDesign({Key? key, required this.title}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(title, style: TextStyle(fontWeight: FontWeight.w800,fontSize: 22));
+  }
+}
